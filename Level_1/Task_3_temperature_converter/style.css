@@ -1,0 +1,166 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Container */
+.converter-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 30px 25px;
+    border-radius: 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.converter-container h1 {
+    font-size: 1.9rem;
+    margin-bottom: 18px;
+    color: #ffe082;
+}
+
+/* Input box */
+.input-box {
+    margin: 15px 0;
+}
+
+input[type="number"],
+select {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    font-size: 1rem;
+    margin-bottom: 12px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+/* Hover / Focus Animations */
+input[type="number"]:focus,
+select:focus {
+    animation: pulse 0.4s ease-in-out;
+    border: 2px solid #ffeb3b;
+    background: #fffde7;
+    color: #333;
+}
+
+button {
+    background: #ff9800;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 1rem;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    width: 100%;
+}
+
+button:hover {
+    background: #e68900;
+    animation: bounce 0.4s ease-in-out;
+}
+
+/* Result */
+.result {
+    margin-top: 22px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    min-height: 25px;
+    animation: slideUp 0.5s ease-in-out;
+    color: #fff59d;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+        background: #fff9c4;
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+    }
+
+    30% {
+        transform: scale(1.1);
+    }
+
+    60% {
+        transform: scale(0.95);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .converter-container {
+        padding: 20px;
+    }
+
+    .converter-container h1 {
+        font-size: 1.6rem;
+    }
+
+    .result {
+        font-size: 1.1rem;
+    }
+}

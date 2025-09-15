@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro To-Do App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <h1>My To-Do Planner</h1>
+                <p class="subtitle">Stay organized, plan better ✨</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- full width form -->
+        <section class="card form-card full-width">
+            <h2>Add New Task</h2>
+            <form id="taskForm" class="task-form">
+                <div class="row">
+                    <input type="text" id="taskTitle" placeholder="Task title" required>
+                    <select id="priority">
+                        <option value="high">High</option>
+                        <option value="medium">Medium</option>
+                        <option value="low">Low</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <textarea id="purpose" placeholder="Purpose / Notes"></textarea>
+                </div>
+                <div class="row">
+                    <input type="datetime-local" id="dueDate">
+                </div>
+                <div class="actions-row">
+                    <button type="submit" id="addTaskBtn" class="primary-btn">Add Task</button>
+                    <button type="reset" class="ghost-btn">Clear</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- grid for pending & completed -->
+        <section class="task-grid">
+            <div class="card list-card">
+                <h2>Pending Tasks</h2>
+                <ul id="pendingTasks" class="task-list"></ul>
+            </div>
+            <div class="card list-card">
+                <h2>Completed Tasks</h2>
+                <ul id="completedTasks" class="task-list"></ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; <span id="year"></span> My Tasks App. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
